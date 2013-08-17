@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.0'
+gem 'thin' # Used to work around the content-length of response body error.
 
 group :development, :test do
   gem 'sqlite3'
@@ -19,6 +20,8 @@ group :test do
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
+  gem 'cucumber-rails', '1.3.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 group :production do
