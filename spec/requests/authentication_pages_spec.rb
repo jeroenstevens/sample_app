@@ -36,9 +36,9 @@ describe "Authentication" do
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
-      end
-    end
-  end
+      end     # followed by signout
+    end    # with valid information
+  end 
 
   describe "authorization" do
     describe "for non signed-in users" do
@@ -56,11 +56,24 @@ describe "Authentication" do
           it "should render the desired protected page" do
             expect(page).to have_title('Edit user')
           end
+
+          describe "when signing in again" do
+            before do
+              delete signout_path
+              visit signin_path
+              fill_in "Email",      with: user.email
+              fill_in "Password",   with: user.password
+              click_button "Sign in"
+            end
+            it "should render the default (profile) page" do
+              expect(page).to have_title(user.name)
+            end
+          end
         end
       end
 
       describe "in the Users controller" do
-
+        
         describe "visiting the edit page" do
           before { visit edit_user_path(user) } 
           it { should have_title('Sign in') }
@@ -71,6 +84,19 @@ describe "Authentication" do
           specify { expect(response).to redirect_to(signin_path) }
         end
       end
+
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end     # submitting to the create action
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end     # submitting to the destroy action
+      end     # in the Microposts controller
     end
 
     describe "as wrong user" do
