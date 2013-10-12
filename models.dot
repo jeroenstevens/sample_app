@@ -1,0 +1,11 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true]
+	"Micropost" [shape=Mrecord, label="{Micropost|id :integer\lcontent :string\luser_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Relationship" [shape=Mrecord, label="{Relationship|id :integer\lfollower_id :integer\lfollowed_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"User" [shape=Mrecord, label="{User|id :integer\lname :string\lemail :string\lcreated_at :datetime\lupdated_at :datetime\lpassword_digest :string\lremember_token :string\ladmin :boolean\l}"]
+	"User" -> "Micropost" [arrowtail=odot, arrowhead=crow, dir=both color="#D17BA0"]
+	"User" -> "Relationship" [arrowtail=odot, arrowhead=crow, dir=both color="#E365E6"]
+	"User" -> "User" [label="followed_users", arrowtail=crow, arrowhead=crow, dir=both color="#CFBE77"]
+	"User" -> "Relationship" [label="reverse_relationships", arrowtail=odot, arrowhead=crow, dir=both color="#39887C"]
+	"User" -> "User" [label="followers", arrowtail=crow, arrowhead=crow, dir=both color="#CA3E85"]
+}

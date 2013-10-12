@@ -1,0 +1,81 @@
+.box { float: left; }
+#root { max-width: 1200px; margin: 0 auto; }
+
+#Header { width: 100%; }
+#container { width: 100%; }
+#sidebar { width: 33.33333333333333%; }
+#img_1 { width: 100%; }
+#footer { width: 100%; }
+#content { width: 33.33333333333333%; }
+#right { width: 33.33333333333333%; }
+#box7 { width: 100%; }
+#img_2 { width: 100%; }
+#img_3 { width: 100%; }
+#img_4 { width: 100%; }
+#img_5 { width: 100%; }
+#img_6 { width: 100%; }
+#img_7 { width: 100%; }
+#img_8 { width: 100%; }
+#img_9 { width: 100%; }
+
+
+/* Laptop/Tablet (1024px) */
+@media only screen and (min-width: 569px) and (max-width: 1024px) and (orientation: landscape) {
+	#Header { width: 100%; }
+	#container { width: 100%; }
+	#sidebar { width: 33.33333333333333%; }
+	#img_1 { width: 100%; }
+	#footer { width: 100%; }
+	#content { width: 33.33333333333333%; }
+	#right { width: 33.33333333333333%; }
+	#box7 { width: 100%; }
+	#img_2 { width: 100%; }
+	#img_3 { width: 100%; }
+	#img_4 { width: 100%; }
+	#img_5 { width: 100%; }
+	#img_6 { width: 100%; }
+	#img_7 { width: 100%; }
+	#img_8 { width: 100%; }
+	#img_9 { width: 100%; }
+}
+
+/* iPhone 5 Landscape */
+@media only screen and (width: px) and (width: 568px) and (orientation: landscape) {
+	#Header { width: 100%; }
+	#container { width: 100%; }
+	#sidebar { width: 100%; }
+	#img_1 { width: 100%; }
+	#footer { width: 100%; }
+	#content { width: 100%; }
+	#right { width: 100%; }
+	#box7 { width: 100%; }
+	#img_2 { width: 100%; }
+	#img_3 { width: 100%; }
+	#img_4 { width: 100%; }
+	#img_5 { width: 100%; }
+	#img_6 { width: 100%; }
+	#img_7 { width: 100%; }
+	#img_8 { width: 100%; }
+	#img_9 { width: 100%; }
+}
+
+/* iPhone 5 Portrait */
+@media only screen and (width: px) and (width: 568px) and (orientation: portrait) {
+	#Header { width: 100%; }
+	#container { width: 100%; }
+	#sidebar { width: 100%; }
+	#img_1 { width: 100%; }
+	#footer { width: 100%; }
+	#content { width: 100%; }
+	#right { width: 100%; }
+	#box7 { width: 100%; }
+	#img_2 { width: 100%; }
+	#img_3 { width: 100%; }
+	#img_4 { width: 100%; }
+	#img_5 { width: 100%; }
+	#img_6 { width: 100%; }
+	#img_7 { width: 100%; }
+	#img_8 { width: 100%; }
+	#img_9 { width: 100%; }
+}
+

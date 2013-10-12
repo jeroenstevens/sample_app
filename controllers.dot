@@ -1,0 +1,9 @@
+digraph controllers_diagram {
+	graph[overlap=false, splines=true]
+	"ApplicationController" [shape=Mrecord, label="{ApplicationController|\l|\l|_layout\l}"]
+	"MicropostsController" [shape=Mrecord, label="{MicropostsController|create\ldestroy\lindex\l|\l|_layout\lcorrect_user\lmicropost_params\l}"]
+	"RelationshipsController" [shape=Mrecord, label="{RelationshipsController|create\ldestroy\l|\l|_layout\l}"]
+	"SessionsController" [shape=Mrecord, label="{SessionsController|create\ldestroy\lnew\l|\l|_layout\l}"]
+	"StaticPagesController" [shape=Mrecord, label="{StaticPagesController|about\lcontact\lhelp\lhome\l|\l|_layout\l}"]
+	"UsersController" [shape=Mrecord, label="{UsersController|create\ldestroy\ledit\lfollowers\lfollowing\lindex\lnew\lshow\lupdate\l|\l|_layout\ladmin_user\lcorrect_user\luser_params\l}"]
+}

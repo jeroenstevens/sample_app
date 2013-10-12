@@ -1,10 +1,15 @@
+# -*- encoding : utf-8 -*-
+# User
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :microposts, dependent: :destroy
 
-  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :relationships, foreign_key: 'follower_id', dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
 
-  has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+  has_many :reverse_relationships, foreign_key: 'followed_id', class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
   validates :name,  presence: true, length: { maximum: 50 }
@@ -33,16 +38,22 @@ class User < ActiveRecord::Base
     relationships.find_by(followed_id: other_user.id).destroy!
   end
 
-  def User.new_remember_token
+  def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
-  def User.encrypt(token)
+  def self.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
 
   private
+
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token)
     end
+
+    def should_generate_new_friendly_id?
+      name_changed?
+    end
+
 end

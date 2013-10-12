@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require rails.validations
+//= require modernizr.custom
 //= require_tree .

@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+# Sessions controller
 class SessionsController < ApplicationController
   def new
   end
